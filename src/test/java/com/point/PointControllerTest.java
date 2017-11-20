@@ -1,8 +1,6 @@
 package com.point;
 
 import org.junit.Test;
-import point.Point;
-import point.PointController;
 
 import static org.junit.Assert.assertTrue;
 

@@ -1,24 +1,24 @@
 package com.calculator;
 
+import java.util.Scanner;
+
 public class Calculate {
 
     public static void main(String[] args) {
-        double a = 1.5;
-        double b = 2.9;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj pierwszą liczbę:");
+        double a = scanner.nextDouble();
+        System.out.println("Jakie działanie chcesz wykonać ? ( +, -, *, /)");
+        scanner.nextLine();
+        String operator = scanner.nextLine();
+        System.out.println("Podaj drugą liczbę:");
+        double b = scanner.nextDouble();
 
         Calculator calculator = new Calculator();
-        double resultOfAdd = calculator.add(a,b);
-        double resultOfSubtract = calculator.subtract(a,b);
-        double resultOfMultiply = calculator.multiply(a,b);
-        double resultOfDivide = calculator.divide(a,b);
+        double result = calculator.calculate(operator, a, b);
+        System.out.println("Wynik: " + result);
 
-        System.out.println("Dodawanie: " + resultOfAdd);
-        System.out.println("Odejmowanie: " + resultOfSubtract);
-        System.out.println("Mnożenie: " + resultOfMultiply);
-        System.out.println("Dzielenie: " + resultOfDivide);
-
+        scanner.close();
     }
-
-
-
 }

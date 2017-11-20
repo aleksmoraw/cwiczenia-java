@@ -2,20 +2,31 @@ package com.calculator;
 
 public class Calculator {
 
-    public double add (double a, double b) {
-        return a + b;
-    }
+    public static final String ADD = "+";
+    public static final String MINUS = "-";
+    public static final String MULTIPLY = "*";
+    public static final String DIVIDE = "/";
 
-    public double subtract (double a, double b) {
-        return a - b;
-    }
+    public double calculate(String operator, double a, double b) {
+        double result = 0;
 
-    public double multiply (double a, double b) {
-        return a * b;
-    }
-
-    public double divide (double a, double b) {
-        return a / b;
+        switch (operator) {
+            case ADD:
+                result = a + b;
+                break;
+            case MINUS:
+                result = a - b;
+                break;
+            case MULTIPLY:
+                result = a * b;
+                break;
+            case DIVIDE:
+                result = a / b;
+                break;
+            default:
+                System.out.println("Brak podanego operatora");
+        }
+        return result;
     }
 }
 
